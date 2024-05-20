@@ -5,9 +5,9 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
+        "tsconfigRootDir": "afford-physio",
         "project": ["tsconfig.json"],
         "createDefaultProgram": true,
-        "tsconfigRootDir": "afford-physio",
         "sourceType": "module"
       },
       "extends": [
