@@ -1,0 +1,7 @@
+{
+  "name": "Afford Physio",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
