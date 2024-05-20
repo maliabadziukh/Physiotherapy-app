@@ -6,7 +6,9 @@
       "files": ["*.ts"],
       "parserOptions": {
         "project": ["tsconfig.json"],
-        "createDefaultProgram": true
+        "createDefaultProgram": true,
+        "tsconfigRootDir": "afford-physio",
+        "sourceType": "module"
       },
       "extends": [
         "plugin:@angular-eslint/recommended",
