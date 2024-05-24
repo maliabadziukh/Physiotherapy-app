@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Authentication</ion-title>
+  </ion-toolbar>
+  <ion-segment [(ngModel)]="user">
+    <ion-segment-button value="physio">
+      <ion-label>Physio</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="patient">
+      <ion-label>Patient</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-button (click)="onLogin()" color="primary"> Log in </ion-button>
+  <ion-button (click)="onLogout()" color="danger"> Log out </ion-button>
+</ion-content>

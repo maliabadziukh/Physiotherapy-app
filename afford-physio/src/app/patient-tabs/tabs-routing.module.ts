@@ -4,18 +4,22 @@ import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: '',
     component: TabsPage,
     children: [
       {
         path: 'home',
         loadChildren: () =>
-          import('../home/home.module').then((m) => m.HomePageModule),
+          import('../patient-home/patient-home.module').then(
+            (m) => m.PatientHomePageModule
+          ),
       },
       {
         path: 'physios',
         loadChildren: () =>
-          import('../physios/physios.module').then((m) => m.PhysiosPageModule),
+          import('../physios-list/physios.module').then(
+            (m) => m.PhysiosPageModule
+          ),
       },
       {
         path: 'appointments',
@@ -24,17 +28,11 @@ const routes: Routes = [
             (m) => m.AppointmentsPageModule
           ),
       },
-
-      {
-        path: '',
-        redirectTo: '/tabs/home',
-        pathMatch: 'full',
-      },
     ],
   },
   {
     path: '',
-    redirectTo: '/tabs/home',
+    redirectTo: '/home',
     pathMatch: 'full',
   },
 ];
