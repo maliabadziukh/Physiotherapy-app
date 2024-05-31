@@ -1,37 +1,72 @@
 [
   {
     "id": 1,
-    "name": "John Smith",
-    "specialisation": "orthopedics"
+    "name": "Dr. Emily White",
+    "specialisation": "Orthopedics",
+    "email": "emily.white@example.com",
+    "password": "password123"
   },
   {
     "id": 2,
-    "name": "Jane Doe",
-    "specialisation": "poop"
+    "name": "Dr. Michael Brown",
+    "specialisation": "Neurology",
+    "email": "michael.brown@example.com",
+    "password": "password456"
   },
   {
     "id": 3,
-    "name": "Michael Johnson",
-    "specialisation": "orthopedics"
+    "name": "Dr. Sarah Johnson",
+    "specialisation": "Pediatrics",
+    "email": "sarah.johnson@example.com",
+    "password": "password789"
   },
   {
     "id": 4,
-    "name": "Emily Davis",
-    "specialisation": "orthopedics"
+    "name": "Dr. James Davis",
+    "specialisation": "Sports Medicine",
+    "email": "james.davis@example.com",
+    "password": "password101"
   },
   {
     "id": 5,
-    "name": "William Brown",
-    "specialisation": "orthopedics"
+    "name": "Dr. Laura Wilson",
+    "specialisation": "Geriatrics",
+    "email": "laura.wilson@example.com",
+    "password": "password102"
   },
   {
     "id": 6,
-    "name": "Olivia Wilson",
-    "specialisation": "orthopedics"
+    "name": "Dr. Robert Martinez",
+    "specialisation": "Cardiovascular",
+    "email": "robert.martinez@example.com",
+    "password": "password103"
   },
   {
     "id": 7,
-    "name": "Olivia Wilson",
-    "specialisation": "orthopedics"
+    "name": "Dr. Jennifer Lee",
+    "specialisation": "Pulmonary",
+    "email": "jennifer.lee@example.com",
+    "password": "password104"
+  },
+  {
+    "id": 8,
+    "name": "Dr. William Hernandez",
+    "specialisation": "Hand Therapy",
+    "email": "william.hernandez@example.com",
+    "password": "password105"
+  },
+  {
+    "id": 9,
+    "name": "Dr. Elizabeth Garcia",
+    "specialisation": "Women's Health",
+    "email": "elizabeth.garcia@example.com",
+    "password": "password106"
+  },
+  {
+    "id": 10,
+    "name": "Dr. Christopher Clark",
+    "specialisation": "Vestibular Rehabilitation",
+    "email": "christopher.clark@example.com",
+    "password": "password107"
   }
 ]

@@ -1,8 +1,7 @@
-export class Physio {
+export class Patient {
   constructor(
     private _id: number,
     private _name: string,
-    private _specialisation: string,
     private _email: string,
     private _password: string
   ) {}
@@ -13,10 +12,6 @@ export class Physio {
 
   public get name(): string {
     return this._name;
-  }
-
-  public get specialisation(): string {
-    return this._specialisation;
   }
 
   public get email(): string {

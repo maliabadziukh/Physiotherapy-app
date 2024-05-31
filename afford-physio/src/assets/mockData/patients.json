@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "password": "password123"
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "email": "jane.smith@example.com",
+    "password": "password456"
+  },
+  {
+    "id": 3,
+    "name": "Alice Johnson",
+    "email": "alice.johnson@example.com",
+    "password": "password789"
+  },
+  {
+    "id": 4,
+    "name": "Bob Brown",
+    "email": "bob.brown@example.com",
+    "password": "password101"
+  },
+  {
+    "id": 5,
+    "name": "Charlie Davis",
+    "email": "charlie.davis@example.com",
+    "password": "password102"
+  },
+  {
+    "id": 6,
+    "name": "Daisy Evans",
+    "email": "daisy.evans@example.com",
+    "password": "password103"
+  },
+  {
+    "id": 7,
+    "name": "Ethan Foster",
+    "email": "ethan.foster@example.com",
+    "password": "password104"
+  },
+  {
+    "id": 8,
+    "name": "Fiona Green",
+    "email": "fiona.green@example.com",
+    "password": "password105"
+  },
+  {
+    "id": 9,
+    "name": "George Harris",
+    "email": "george.harris@example.com",
+    "password": "password106"
+  },
+  {
+    "id": 10,
+    "name": "Hannah Irving",
+    "email": "hannah.irving@example.com",
+    "password": "password107"
+  }
+]
