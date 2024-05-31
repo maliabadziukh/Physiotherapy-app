@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "John Smith",
+    "specialisation": "orthopedics"
+  },
+  {
+    "id": 2,
+    "name": "Jane Doe",
+    "specialisation": "poop"
+  },
+  {
+    "id": 3,
+    "name": "Michael Johnson",
+    "specialisation": "orthopedics"
+  },
+  {
+    "id": 4,
+    "name": "Emily Davis",
+    "specialisation": "orthopedics"
+  },
+  {
+    "id": 5,
+    "name": "William Brown",
+    "specialisation": "orthopedics"
+  },
+  {
+    "id": 6,
+    "name": "Olivia Wilson",
+    "specialisation": "orthopedics"
+  },
+  {
+    "id": 7,
+    "name": "Olivia Wilson",
+    "specialisation": "orthopedics"
+  }
+]

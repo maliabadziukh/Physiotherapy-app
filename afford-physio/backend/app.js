@@ -1,6 +1,9 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 
 const app = express();
+
+app.use(bodyParser.json());
 
 app.use((request, response, next) => {
   response.setHeader("Access-Control-Allow-Origin", "*");
@@ -13,6 +16,12 @@ app.use((request, response, next) => {
     "GET, POST, PATCH, DELETE, OPTIONS"
   );
   next();
+});
+
+app.post("/api/physios", (request, response, next) => {
+  const physio = request.body;
+  console.log(physio);
+  response.status(201).json({ message: "Physio registered successfully!" });
 });
 
 app.use("/api/physios", (request, response, next) => {

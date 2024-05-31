@@ -14,11 +14,9 @@ export class PhysiosService {
 
   getPhysios() {
     this.httpClient
-      .get<{ message: string; physios: Physio[] }>(
-        'http://localhost:3000/api/physios'
-      )
-      .subscribe((physioData) => {
-        this.physios = physioData.physios;
+      .get<Physio[]>('/assets/mockData/physios.json')
+      .subscribe((physios) => {
+        this.physios = physios;
         this.physiosUpdated.next([...this.physios]);
       });
   }
