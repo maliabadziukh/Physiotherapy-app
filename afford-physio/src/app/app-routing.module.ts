@@ -19,6 +19,13 @@ const routes: Routes = [
       import('./patient-tabs/tabs.module').then((m) => m.TabsPageModule),
     canLoad: [patientAuthGuard],
   },
+  {
+    path: 'physio',
+    loadChildren: () =>
+      import('./physio-tabs/physio-tabs.module').then(
+        (m) => m.PhysioTabsPageModule
+      ),
+  },
 ];
 @NgModule({
   imports: [

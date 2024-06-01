@@ -1,31 +1,31 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TabsPage } from './tabs.page';
+import { PhysioTabsPage } from './physio-tabs.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: TabsPage,
+    component: PhysioTabsPage,
     children: [
       {
         path: 'home',
         loadChildren: () =>
-          import('../patient-home/patient-home.module').then(
-            (m) => m.PatientHomePageModule
+          import('../physio-home/physio-home.module').then(
+            (m) => m.PhysioHomePageModule
           ),
       },
       {
-        path: 'physios',
+        path: 'patients',
         loadChildren: () =>
-          import('../patient-physios/physios.module').then(
-            (m) => m.PhysiosPageModule
+          import('../physio-patients/physio-patients.module').then(
+            (m) => m.PhysioPatientsPageModule
           ),
       },
       {
         path: 'appointments',
         loadChildren: () =>
-          import('../appointments/appointments.module').then(
-            (m) => m.AppointmentsPageModule
+          import('../physio-appointments/physio-appointments.module').then(
+            (m) => m.PhysioAppointmentsPageModule
           ),
       },
     ],
@@ -40,4 +40,4 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forChild(routes)],
 })
-export class TabsPageRoutingModule {}
+export class PhysioTabsPageRoutingModule {}
