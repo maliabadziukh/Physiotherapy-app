@@ -10,12 +10,9 @@ export class patientAuthGuard implements CanLoad {
     route: Route,
     segments: UrlSegment[]
   ): Observable<boolean> | Promise<boolean> | boolean {
-    if (!this.authService.isAuthenticated == true) {
+    if (this.authService.authenticatedAs !== 'patient') {
       this.router.navigateByUrl('/auth');
     }
-    return (
-      this.authService.isAuthenticated &&
-      this.authService.authenticatedAs == 'patient'
-    );
+    return this.authService.authenticatedAs == 'patient';
   }
 }

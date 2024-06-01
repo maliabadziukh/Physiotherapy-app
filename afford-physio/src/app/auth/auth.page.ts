@@ -14,28 +14,42 @@ export class AuthPage implements OnInit {
   @ViewChild(IonModal) patientModal: IonModal;
 
   loginForm: FormGroup;
-  user: string = 'patient';
+  userType: string = 'patient';
   message = '';
 
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit() {
     this.loginForm = new FormGroup({
-      name: new FormControl(null, {
+      email: new FormControl(null, {
         updateOn: 'blur',
         validators: [Validators.required],
       }),
-      specialisation: new FormControl(null, {
+      password: new FormControl(null, {
         updateOn: 'blur',
         validators: [Validators.required],
       }),
     });
   }
   onLogin() {
-    this.authService.login(this.user);
-    const navUrl = `/${this.user}/home`;
-    console.log(navUrl);
-    this.router.navigateByUrl(navUrl);
+    console.log('attempting to log in...');
+    this.authService
+      .login(
+        this.userType,
+        this.loginForm.value.email,
+        this.loginForm.value.password
+      )
+      .subscribe({
+        next: (user) => {
+          console.log('Login successful:', user);
+          this.router.navigateByUrl(`/${this.userType}/home`);
+          this.message = '';
+        },
+        error: (err) => {
+          console.error('Login failed:', err);
+          this.message = 'Invalid email or password';
+        },
+      });
   }
   onRegister() {}
   onLogout() {
