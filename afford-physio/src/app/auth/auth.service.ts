@@ -16,6 +16,9 @@ export class AuthService {
   get authenticatedAs() {
     return this._authenticatedAs;
   }
+  get currentUser() {
+    return this._currentUser;
+  }
 
   login(
     userType: string,
