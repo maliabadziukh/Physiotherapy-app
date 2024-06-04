@@ -17,7 +17,7 @@ const routes: Routes = [
     path: 'patient',
     loadChildren: () =>
       import('./patient-tabs/tabs.module').then((m) => m.TabsPageModule),
-    canLoad: [patientAuthGuard],
+    // canLoad: [patientAuthGuard],
   },
   {
     path: 'physio',
