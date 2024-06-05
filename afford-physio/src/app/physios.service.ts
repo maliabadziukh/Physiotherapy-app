@@ -7,8 +7,8 @@ import { Subject } from 'rxjs';
   providedIn: 'root',
 })
 export class PhysiosService {
-  private physios: Physio[] = [];
-  private physiosUpdated = new Subject<Physio[]>();
+  public physios: Physio[] = [];
+  public physiosUpdated = new Subject<Physio[]>();
 
   constructor(private httpClient: HttpClient) {}
 
@@ -19,6 +19,7 @@ export class PhysiosService {
         this.physios = physios;
         this.physiosUpdated.next([...this.physios]);
       });
+    console.log(this.physios);
   }
   getPhysiosUpdateListener() {
     return this.physiosUpdated.asObservable();

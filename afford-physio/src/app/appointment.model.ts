@@ -7,7 +7,7 @@ export class Appointment {
     private _patient: Patient,
     private _physio: Physio,
     private _location: string,
-    private _date: Date,
+    private _date: string,
     private _status: string
   ) {}
 

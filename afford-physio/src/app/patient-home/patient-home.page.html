@@ -26,8 +26,57 @@
     <ion-card-content> appointment details go here :) </ion-card-content>
   </ion-card>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button>
+    <ion-fab-button id="open-appointment-modal">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+  <ion-modal trigger="open-appointment-modal">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="onCancel()">Cancel</ion-button>
+          </ion-buttons>
+          <ion-title>Welcome</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="onConfirm()" [strong]="true"
+              >Confirm</ion-button
+            >
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <form action="">
+          <ion-grid>
+            <ion-row>
+              <ion-col size-md="6" offset-md="3">
+                <ion-item>
+                  <ion-select
+                    label="Physiotherapist"
+                    placeholder="Select Physiotherapist"
+                  >
+                    <ion-select-option
+                      *ngFor="let physio of physios"
+                      [value]="physio"
+                      >{{physio.name}}</ion-select-option
+                    >
+                  </ion-select>
+                </ion-item>
+                <ion-item>
+                  <ion-input
+                    label="Location"
+                    type="text"
+                    placeholder="Enter address"
+                  ></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-datetime minuteValues="0, 15, 30, 45"></ion-datetime>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </form>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 </ion-content>
