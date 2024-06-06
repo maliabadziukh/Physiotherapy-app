@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from '../auth/auth.service';
 import { Patient } from '../patient.model';
 import { IonModal } from '@ionic/angular';
@@ -6,18 +6,20 @@ import { OverlayEventDetail } from '@ionic/core/components';
 import { PhysiosService } from '../physios.service';
 import { Physio } from '../physio.model';
 import { Subscription } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-patient-home',
   templateUrl: 'patient-home.page.html',
   styleUrls: ['patient-home.page.scss'],
 })
-export class PatientHomePage implements OnInit {
+export class PatientHomePage implements OnInit, OnDestroy {
   @ViewChild(IonModal) modal: IonModal;
   private _currentUser: Patient = null;
   private _userName: string = 'patient';
   public physios: Physio[] = [];
   private physiosSub: Subscription;
+  appointmentForm: FormGroup;
 
   get currentUser() {
     return this._currentUser;
@@ -50,6 +52,21 @@ export class PatientHomePage implements OnInit {
       .subscribe((physios: Physio[]) => {
         this.physios = physios;
       });
+
+    this.appointmentForm = new FormGroup({
+      physiotherapist: new FormControl(null, {
+        updateOn: 'blur',
+        validators: [Validators.required],
+      }),
+      location: new FormControl(null, {
+        updateOn: 'blur',
+        validators: [Validators.required],
+      }),
+      dateTime: new FormControl(null, {
+        updateOn: 'blur',
+        validators: [Validators.required],
+      }),
+    });
   }
 
   onCancel() {
@@ -59,5 +76,10 @@ export class PatientHomePage implements OnInit {
   onConfirm() {
     this.modal.dismiss(null, 'confirm');
     console.log('Submit appointment request.');
+    console.log(this.appointmentForm);
+  }
+
+  ngOnDestroy(): void {
+    this.physiosSub.unsubscribe();
   }
 }
