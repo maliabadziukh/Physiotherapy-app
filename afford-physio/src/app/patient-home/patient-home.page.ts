@@ -7,6 +7,8 @@ import { PhysiosService } from '../physios.service';
 import { Physio } from '../physio.model';
 import { Subscription } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AppointmentsService } from '../appointments.service';
+import { Appointment } from '../appointment.model';
 
 @Component({
   selector: 'app-patient-home',
@@ -20,6 +22,7 @@ export class PatientHomePage implements OnInit, OnDestroy {
   public physios: Physio[] = [];
   private physiosSub: Subscription;
   appointmentForm: FormGroup;
+  private requestedAppointment: Appointment;
 
   get currentUser() {
     return this._currentUser;
@@ -38,7 +41,8 @@ export class PatientHomePage implements OnInit, OnDestroy {
 
   constructor(
     private authService: AuthService,
-    private physiosService: PhysiosService
+    private physiosService: PhysiosService,
+    private appointmentsService: AppointmentsService
   ) {}
 
   ngOnInit(): void {
@@ -74,9 +78,18 @@ export class PatientHomePage implements OnInit, OnDestroy {
   }
 
   onConfirm() {
-    this.modal.dismiss(null, 'confirm');
-    console.log('Submit appointment request.');
     console.log(this.appointmentForm);
+    this.modal.dismiss(null, 'confirm');
+    console.log('Submiting appointment request...');
+    this.requestedAppointment = new Appointment(
+      this.appointmentsService.appointmendId,
+      this.currentUser,
+      this.appointmentForm.value.physiotherapist,
+      this.appointmentForm.value.location,
+      this.appointmentForm.value.dateTime,
+      'Pending'
+    );
+    this.appointmentsService.addAppointment(this.requestedAppointment);
   }
 
   ngOnDestroy(): void {

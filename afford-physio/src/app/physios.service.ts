@@ -19,8 +19,8 @@ export class PhysiosService {
         this.physios = physios;
         this.physiosUpdated.next([...this.physios]);
       });
-    console.log(this.physios);
   }
+
   getPhysiosUpdateListener() {
     return this.physiosUpdated.asObservable();
   }
