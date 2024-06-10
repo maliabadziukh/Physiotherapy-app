@@ -10,4 +10,11 @@
       <ion-title size="large">Appointments</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-card *ngFor="let appt of appointments">
+    <ion-card-header>
+      <ion-card-title>Appointment with {{appt.physio.name}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content> appointment details go here :) </ion-card-content>
+  </ion-card>
 </ion-content>
