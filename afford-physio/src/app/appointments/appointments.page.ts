@@ -11,7 +11,7 @@ import { Physio } from '../physio.model';
   templateUrl: 'appointments.page.html',
   styleUrls: ['appointments.page.scss'],
 })
-export class AppointmentsPage implements OnInit {
+export class AppointmentsPage {
   appointments: Appointment[] = [];
 
   constructor(
@@ -19,7 +19,7 @@ export class AppointmentsPage implements OnInit {
     public appointmentsService: AppointmentsService
   ) {}
 
-  ngOnInit(): void {
+  ionViewWillEnter(): void {
     this.appointments = this.appointmentsService
       .getAppointments()
       .filter((appt) => {

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Appointment } from './appointment.model';
 import { Subject } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+
 import { Patient } from './patient.model';
 import { Physio } from './physio.model';
 
@@ -23,7 +23,7 @@ export class AppointmentsService {
   public appointmendId = 1;
   private jsonFilePath = 'assets/mockData/appointments.json';
 
-  constructor(private httpClient: HttpClient) {}
+  constructor() {}
 
   addAppointment(appointment: Appointment) {
     this.appointments.push(appointment);
