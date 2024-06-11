@@ -8,7 +8,7 @@ export class Appointment {
     private _physio: Physio,
     private _location: string,
     private _date: string,
-    private _status: string
+    private _status: string // Pending, Confirmed, Rejected
   ) {}
 
   public get id() {

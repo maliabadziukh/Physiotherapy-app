@@ -1,13 +1,30 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>physio-appointments</ion-title>
+    <ion-title> Appointments </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">physio-appointments</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-title>Requests</ion-title>
+  <ng-container *ngIf="isReqApptEmpty; else appointmentCards">
+    <p>You have no appointments to display.</p></ng-container
+  >
+
+  <ng-template #appointmentCards
+    ><ion-card *ngFor="let appt of requestedAppointments">
+      <ion-card-header>
+        <ion-card-title>Appointment with {{appt.patient.name}}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <p>Time: {{appt.date}}</p>
+        <p>Location: {{appt.location}}</p>
+      </ion-card-content>
+
+      <ion-button (click)="onReject(appt.id)"> Reject </ion-button>
+      <ion-button (click)="onAccept(appt.id)"> Accept </ion-button>
+    </ion-card></ng-template
+  >
+
+  <ion-item-divider> </ion-item-divider>
 </ion-content>

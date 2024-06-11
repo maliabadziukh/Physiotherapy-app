@@ -26,11 +26,12 @@ export class AppointmentsPage {
       .filter((appt) => {
         if (appt.patient.id === this.authService.currentUser.id) {
           return true;
-          this.isAppointmentsEmpty = false;
         } else {
           return false;
         }
       });
+    this.isAppointmentsEmpty = this.appointments.length === 0;
     console.log(this.appointments);
+    console.log(this.isAppointmentsEmpty);
   }
 }

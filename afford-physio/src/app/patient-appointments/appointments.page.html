@@ -5,20 +5,19 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-  <ng-template *ngIfElse="isAppointmentsEmpty; else appointmentCards">
-    <p>You have no appointments to display.</p></ng-template
-  >
-
-  <ng-template #appointmentCards
-    ><ion-card *ngFor="let appt of appointments">
+  <ng-container *ngIf="isAppointmentsEmpty; else appointmentCards">
+    <p>You have no appointments to display.</p>
+  </ng-container>
+  <ng-template #appointmentCards>
+    <ion-card *ngFor="let appt of appointments">
       <ion-card-header>
         <ion-card-title>Appointment with {{appt.physio.name}}</ion-card-title>
       </ion-card-header>
-
       <ion-card-content>
         <p>Time: {{appt.date}}</p>
         <p>Location: {{appt.location}}</p>
+        <p>Status: {{appt.status}}</p>
       </ion-card-content>
-    </ion-card></ng-template
-  >
+    </ion-card>
+  </ng-template>
 </ion-content>
