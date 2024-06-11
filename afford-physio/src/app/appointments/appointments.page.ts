@@ -13,6 +13,7 @@ import { Physio } from '../physio.model';
 })
 export class AppointmentsPage {
   appointments: Appointment[] = [];
+  isAppointmentsEmpty = true;
 
   constructor(
     public authService: AuthService,
@@ -25,6 +26,7 @@ export class AppointmentsPage {
       .filter((appt) => {
         if (appt.patient.id === this.authService.currentUser.id) {
           return true;
+          this.isAppointmentsEmpty = false;
         } else {
           return false;
         }
