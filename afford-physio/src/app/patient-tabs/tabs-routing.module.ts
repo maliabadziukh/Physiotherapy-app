@@ -24,7 +24,7 @@ const routes: Routes = [
       {
         path: 'appointments',
         loadChildren: () =>
-          import('../appointments/appointments.module').then(
+          import('../patient-appointments/appointments.module').then(
             (m) => m.AppointmentsPageModule
           ),
       },

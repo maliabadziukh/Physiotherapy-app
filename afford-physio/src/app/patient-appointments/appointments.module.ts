@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppointmentsPage } from './appointments.page';
 
 import { AppointmentsPageRoutingModule } from './appointments-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   imports: [
